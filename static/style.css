@@ -1,0 +1,413 @@
+:root {
+  --ink: #0D0D0D;
+  --paper: #FFFFFF;
+  --power: #E8FF3C;
+  --power-2: #FF3B30;
+  --grey: #6B6B6B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Archivo', -apple-system, sans-serif;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  background: var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  padding-bottom: 64px;
+}
+
+.hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 24px 0;
+}
+
+.hero-label {
+  color: var(--power);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 20px;
+}
+
+.hero-headline {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--power);
+  font-size: 3.6rem;
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  margin: 0 0 20px;
+}
+
+.hero-sub {
+  color: var(--paper);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- FORM ---------- */
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+.plan-form {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  margin-top: -40px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: relative;
+}
+
+.field label {
+  display: block;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.field-pair {
+  display: flex;
+  gap: 20px;
+}
+
+.field-pair .field {
+  flex: 1;
+}
+
+select, input[type="number"] {
+  width: 100%;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: 0;
+  appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath d='M1 1l6 7 6-7' stroke='%230D0D0D' stroke-width='2.4' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+select:focus, input[type="number"]:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.segmented {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.segmented input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.segment {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  background: var(--paper);
+  transition: background 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease;
+}
+
+.segmented input[type="radio"]:checked + .segment {
+  background: var(--power);
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-2px, -2px);
+}
+
+.segmented input[type="radio"]:focus-visible + .segment {
+  outline: 3px solid var(--power-2);
+  outline-offset: 2px;
+}
+
+.field-hint {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--grey);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.field-group {
+  border: 3px solid var(--ink);
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group legend {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  padding: 0 8px;
+}
+
+input[type="file"] {
+  width: 100%;
+  border: 3px dashed var(--ink);
+  padding: 14px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  background: var(--paper);
+}
+
+.submit-btn {
+  margin-top: 6px;
+  background: var(--power);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 0;
+  padding: 16px 24px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.submit-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.submit-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.submit-btn:focus-visible {
+  outline: 3px solid var(--power-2);
+  outline-offset: 3px;
+}
+
+/* ---------- RESULT ---------- */
+
+.build-note-card {
+  background: var(--power);
+  border: 3px solid var(--ink);
+  border-top: none;
+  padding: 16px 36px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.result-section-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  margin: 0 0 18px;
+}
+
+.workout-days {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.workout-day {
+  border: 3px solid var(--ink);
+  padding: 18px 20px;
+}
+
+.workout-day-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  color: var(--power-2);
+}
+
+.exercise-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.exercise-list li {
+  margin-bottom: 4px;
+}
+
+.meal-structure-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  margin: 18px 0 8px;
+}
+
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.macro-box {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.macro-box span {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
+  text-transform: none;
+  margin-bottom: 2px;
+}
+
+.missed-workout-card {
+  background: var(--ink);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  border-top: none;
+  padding: 28px 36px;
+}
+
+.missed-workout-card .result-nutrition-label {
+  color: var(--power);
+}
+
+.missed-workout-card .exercise-list {
+  color: var(--paper);
+}
+
+.result-block {
+  background: var(--power-2);
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  margin-top: 48px;
+  padding: 32px 36px;
+  animation: pop 0.35s ease both;
+}
+
+.result-label {
+  color: var(--ink);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  margin: 0 0 10px;
+}
+
+.result-plan {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-size: 2.4rem;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.result-detail-card {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-top: none;
+  padding: 32px 36px;
+}
+
+.result-detail {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.result-nutrition {
+  background: var(--power);
+  border: 3px solid var(--ink);
+  padding: 18px 20px;
+}
+
+.result-nutrition-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+
+.result-nutrition p:last-child {
+  margin: 0;
+  font-weight: 600;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.6rem;
+  }
+  .hero-inner {
+    padding: 48px 20px 0;
+  }
+  .plan-form {
+    padding: 24px;
+    margin-top: -28px;
+  }
+  .field-pair {
+    flex-direction: column;
+    gap: 26px;
+  }
+  .result-block, .result-detail-card {
+    padding: 24px;
+  }
+  .macro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .missed-workout-card, .build-note-card {
+    padding: 20px;
+  }
+}
